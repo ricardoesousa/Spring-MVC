@@ -15,6 +15,8 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
+import net.bytebuddy.asm.Advice.This;
+
 @Entity
 public class Titulo {
 
@@ -96,6 +98,10 @@ public class Titulo {
 
 	public void setStatus(StatusTitulo status) {
 		this.status = status;
+	}
+	
+	public boolean isPendente() {
+		return StatusTitulo.PENDENTE.equals(this.status);
 	}
 
 }
