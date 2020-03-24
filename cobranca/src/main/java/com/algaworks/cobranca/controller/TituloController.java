@@ -73,7 +73,7 @@ public class TituloController {
 	@RequestMapping(value = "{codigo}", method = RequestMethod.POST)
 	public String excluir(@PathVariable Long codigo, RedirectAttributes attributes) {
 		cadastroTituloService.excluir (codigo);
-		attributes.addFlashAttribute("mensagem", "Título excluído com sucesso!");
+		attributes.addFlashAttribute("mensagem", "Título excluído com sucesso");
 		return "redirect:/titulos";
 	}
 
